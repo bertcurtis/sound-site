@@ -139,7 +139,7 @@ export default class Index extends Component {
     }
     hideDirections = () => {
         this.setState({
-            show: true
+            show: false
         });
     }
     playWisely = () => {
