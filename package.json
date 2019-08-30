@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "temp": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
