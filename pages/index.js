@@ -1,32 +1,54 @@
-import goblet1 from '../static/images/goblet1.jpg'
-import goblet2 from '../static/images/goblet2.jpg'
-import goblet3 from '../static/images/goblet3.jpg'
-import goblet4 from '../static/images/goblet4.jpg'
-import goblet5 from '../static/images/goblet5.jpg'
-import grail from '../static/images/grail.gif'
+import goblet1 from '../images/goblet1.jpg'
+import goblet2 from '../images/goblet2.jpg'
+import goblet3 from '../images/goblet3.jpg'
+import goblet4 from '../images/goblet4.jpg'
+import goblet5 from '../images/goblet5.jpg'
+import grail from '../images/grail.gif'
 
 const playWisely = () => {
-    var audio = new Audio('/static/audio/wisely.wav');
-    audio.play();
+    var audio = new Audio('/static/audio/indiana_last_wisely.wav');
+    audio.load()
+    const audioPromise = audio.play()
+    if (audioPromise !== undefined) {
+      audioPromise
+        .then(_ => {
+          return;// autoplay started
+        })
+        .catch(err => {
+          // catch dom exception
+          console.info(err)
+        })
+    }
 }
 const playPoorly = () => {
-    var audio = new Audio('/static/audio/poorly.wav');
-    audio.play();
+    var audio = new Audio('/static/audio/indiana_last_poorly.wav');
+    audio.load()
+    const audioPromise = audio.play()
+    if (audioPromise !== undefined) {
+      audioPromise
+        .then(_ => {
+          return;// autoplay started
+        })
+        .catch(err => {
+          // catch dom exception
+          console.info(err)
+        })
+    }
 }
 const Index = () => (
     <div className='wrapper'>
         <h2>CHOOSE WISELY</h2>
     <div className='butt'>
-    <div className='butt1' onClick={() => playPoorly()}>
-    </div> 
-    <div className='butt2' onClick={() => playPoorly()}>
-    </div> 
-    <div className='butt3' onClick={() => playPoorly()}>
-    </div> 
-    <div className='butt5' onClick={() => playWisely()}>
-    </div> 
-    <div className='butt4' onClick={() => playPoorly()}>
-    </div> 
+    <button className='butt1' onClick={() => playPoorly()}>
+    </button> 
+    <button className='butt2' onClick={() => playPoorly()}>
+    </button> 
+    <button className='butt3' onClick={() => playPoorly()}>
+    </button> 
+    <button className='butt5' onClick={() => playWisely()}>
+    </button> 
+    <button className='butt4' onClick={() => playPoorly()}>
+    </button> 
     </div>
     <style jsx>{`
     .wrapper {
